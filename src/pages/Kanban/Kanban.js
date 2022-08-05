@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import InputField from '../components/InputField';
-import TodoList from '../components/TodoList';
+import './Kanban.css';
+import InputField from '../../components/InputField/InputField';
+import TodoList from '../../components/TodoList/TodoList';
 
 export default function Kanban() {
   const [todo, setTodo] = useState('');
@@ -9,13 +10,13 @@ export default function Kanban() {
   const handleAdd = (e) => {
     e.preventDefault();
     if (todo) {
-      setTodos([...todos, {id: Date.now(), todo, status: false, user: 'Michał Listek'}]);
+      setTodos([...todos, {id: Date.now(), todo, status: 'new', user: 'Michał Listek'}]);
       setTodo('');
     }
   };
 
   return (
-    <div className='container'>
+    <div className='kanban'>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
       <TodoList />
       {todos.map((t) => <li>{t.todo}</li>)}

@@ -1,9 +1,10 @@
 import { Link, NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 export default function Navbar() {
   return (
-    <nav className="nav">
-      <Link to="/" className="site-title">Home</Link>
+    <nav className="navbar">
+      <Link to="/" className="navbar__link--home">Home</Link>
       <ul>
         <li>
           <NavLink to="kanban" activeClassName="active">Kanban</NavLink>

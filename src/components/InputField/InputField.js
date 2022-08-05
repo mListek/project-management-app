@@ -6,7 +6,7 @@ export default function InputField(props) {
 
   return (
     <form
-      className="inputfield"
+      className="input"
       onSubmit={(e) => {
         props.handleAdd(e);
         inputRef.current.blur();
@@ -18,9 +18,9 @@ export default function InputField(props) {
         value={props.todo}
         onChange={(e) => props.setTodo(e.target.value)}
         placeholder="Enter a new task"
-        className="inputfield__box"
+        className="input__box"
       />
-      <button className="inputfield__submit" type="submit">Go</button>
+      <button className="input__submit" type="submit">Go</button>
     </form>
   );
 }

@@ -1,4 +1,4 @@
-.inputfield {
+.input {
   margin: 1rem;
   display: flex;
   width: 90%;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.inputfield__box {
+.input__box {
   width: 100%;
   border-radius: 50px;
   padding: 20px 30px;
@@ -16,12 +16,12 @@
   box-shadow: inset 0 0 5px black;
 }
 
-.inputfield__box:focus {
-  box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.5);
+.input__box:focus {
+  box-shadow: 0 0 10px 5000px rgba(0, 0, 0, 0.5);
   outline: none;
 }
 
-.inputfield__submit {
+.input__submit {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -36,11 +36,11 @@
   box-shadow: 0 0 10px black;
 }
 
-.inputfield__submit:hover {
+.input__submit:hover {
   background-color: #388ae2;
 }
 
-.inputfield__submit:active {
+.input__submit:active {
   transform: scale(0.8);
   box-shadow: 0 0 5px black;
 }

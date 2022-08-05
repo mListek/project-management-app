@@ -1,10 +1,11 @@
+import { Route, Routes } from 'react-router-dom';
 import Navbar from './Navbar';
 import Files from './pages/Files';
 import Gantt from './pages/Gantt';
 import Home from './pages/Home';
 import Kanban from './pages/Kanban';
 import Settings from './pages/Settings';
-import { Route, Routes } from 'react-router-dom';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="gantt" element={<Gantt />} />
           <Route path="files" element={<Files />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="login" element={<Login />} />
         </Routes>
       </div>
     </>

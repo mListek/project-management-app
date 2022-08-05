@@ -17,6 +17,9 @@ export default function Navbar() {
         <li>
           <NavLink to="settings" activeClassName="active">Settings</NavLink>
         </li>
+        <li>
+          <NavLink to="login" activeClassName="active">Login</NavLink>
+        </li>
       </ul>
     </nav>
   )

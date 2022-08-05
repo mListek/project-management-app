@@ -18,8 +18,7 @@ export default function Kanban() {
   return (
     <div className='kanban'>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      <TodoList />
-      {todos.map((t) => <li>{t.todo}</li>)}
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import './TodoList.css';
+import SingleTodo from '../SingleTodo/SingleTodo';
 
 export default function TodoList(props) {
   return (
     <div className="todos">
       {props.todos.map(todo => {
-        return <li key={todo.id}>{todo.todo}</li>
+        return <SingleTodo key={todo.id} todo={todo} todos={props.todos} setTodos={props.setTodos} />
       })}
     </div>
   );
 }
-// 44:20 video

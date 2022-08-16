@@ -1,6 +1,44 @@
-.todos {
+.todos__container {
   display: flex;
-  justify-content: space-evenly;
-  width: 90%;
-  flex-wrap: wrap;
+  width: 96%;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.todos__category {
+  display: flex;
+  width: 32%;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.neutral {
+  background-color: rgb(134, 134, 134);
+}
+
+.positive {
+  background-color: rgb(50, 195, 205);
+}
+
+.negative {
+  background-color: rgb(235, 103, 80);
+}
+
+.todos__heading {
+  font-size: 30px;
+  color: white;
+}
+
+@media (max-width: 700px) {
+  .todos__category {
+    width: 95%;
+    margin-bottom: 10px;
+  }
+
+  .todos__container {
+    width: 95%;
+    flex-direction: column;
+  }
 }

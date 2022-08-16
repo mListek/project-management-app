@@ -1,54 +1,76 @@
 import './TodoList.css';
 import SingleTodo from '../SingleTodo/SingleTodo';
+import { Droppable } from '@hello-pangea/dnd';
 
 export default function TodoList(props) {
   return (
     <div className="todos__container">
-      <div className="todos__category neutral">
-        <span className="todos__heading">
-          To Do
-        </span>
+      <Droppable droppableId='TodosList'>
         {
-          props.todos.map((todo) => (
-            <SingleTodo
-              todo={todo}
-              todos={props.todos}
-              key={todo.id}
-              setTodos={props.setTodos}
-            />
-          ))
+          (provided) => (
+            <div className="todos__category neutral" ref={provided.innerRef} {...provided.droppableProps}>
+              <span className="todos__heading">
+                To Do
+              </span>
+              {
+                props.todos.map((todo, index) => (
+                  <SingleTodo
+                    index={index}
+                    todo={todo}
+                    todos={props.todos}
+                    key={todo.id}
+                    setTodos={props.setTodos}
+                  />
+                ))
+              }
+            </div>
+          )
         }
-      </div>
-      <div className="todos__category positive">
-        <span className="todos__heading">
-            In Progress
-        </span>
+      </Droppable>
+      <Droppable droppableId='InProgressList'>
         {
-          props.todos.map((todo) => (
-            <SingleTodo
-              todo={todo}
-              todos={props.todos}
-              key={todo.id}
-              setTodos={props.setTodos}
-            />
-          ))
+          (provided) => (
+            <div className="todos__category positive" ref={provided.innerRef} {...provided.droppableProps}>
+              <span className="todos__heading">
+                  In Progress
+              </span>
+              {
+                props.currentTodos.map((todo, index) => (
+                  <SingleTodo
+                    index={index}
+                    todo={todo}
+                    currentTodos={props.currentTodos}
+                    key={todo.id}
+                    setCurrentTodos={props.setCurrentTodos}
+                  />
+                ))
+              }
+            </div>
+          )
         }
-      </div>
-      <div className="todos__category negative">
-        <span className="todos__heading">
-            Done
-        </span>
+      </Droppable>
+      <Droppable droppableId='DoneList'>
         {
-          props.todos.map((todo) => (
-            <SingleTodo
-              todo={todo}
-              todos={props.todos}
-              key={todo.id}
-              setTodos={props.setTodos}
-            />
-          ))
+          (provided) => (
+            <div className="todos__category negative" ref={provided.innerRef} {...provided.droppableProps}>
+              <span className="todos__heading">
+                  Done
+              </span>
+              {
+                props.completedTodos.map((todo, index) => (
+                  <SingleTodo
+                    index={index}
+                    todo={todo}
+                    completedTodos={props.completedTodos}
+                    key={todo.id}
+                    setCompletedTodos={props.setCompletedTodos}
+                  />
+                ))
+              }
+            </div>
+          )
         }
-      </div>
+      </Droppable>
     </div>
   );
 }

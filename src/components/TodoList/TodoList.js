@@ -7,7 +7,7 @@ export default function TodoList(props) {
     <div className="todos__container">
       <Droppable droppableId='TodosList'>
         {
-          (provided, snapshot) => (
+          (provided) => (
             <div className="todos__category neutral" ref={provided.innerRef} {...provided.droppableProps}>
               <span className="todos__heading">
                 To Do

@@ -7,7 +7,7 @@ export default function TodoList(props) {
     <div className="todos__container">
       <Droppable droppableId='TodosList'>
         {
-          (provided) => (
+          (provided, snapshot) => (
             <div className="todos__category neutral" ref={provided.innerRef} {...provided.droppableProps}>
               <span className="todos__heading">
                 To Do
@@ -23,6 +23,7 @@ export default function TodoList(props) {
                   />
                 ))
               }
+              {provided.placeholder}
             </div>
           )
         }
@@ -45,6 +46,7 @@ export default function TodoList(props) {
                   />
                 ))
               }
+              {provided.placeholder}
             </div>
           )
         }
@@ -67,6 +69,7 @@ export default function TodoList(props) {
                   />
                 ))
               }
+              {provided.placeholder}
             </div>
           )
         }
